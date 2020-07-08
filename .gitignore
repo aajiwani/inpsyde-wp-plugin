@@ -9,3 +9,4 @@ composer.phar
 wordpress-docker/data
 wordpress-docker/plugins
 wordpress-docker/wordpress
+wordpress-docker/node_modules
