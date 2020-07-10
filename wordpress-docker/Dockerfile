@@ -1,7 +1,8 @@
-FROM node:latest
+# FROM node:latest
 
-ARG WORDPRESS_HOST
-ENV WORDPRESS_HOST $WORDPRESS_HOST
+FROM cypress/included:3.3.2
+# ARG WORDPRESS_HOST
+# ENV WORDPRESS_HOST $WORDPRESS_HOST
 
 # Add docker-compose-wait tool -------------------
 ENV WAIT_VERSION 2.7.2
@@ -26,6 +27,10 @@ COPY ./wordpress_install.js /app
 COPY ./modify_wordpress_install.js /app
 
 COPY ./run-env-setup.sh /app
+
+# RUN mkdir -p /app/cypress/integration
+
+COPY ./cypress /app
 
 # make sure we can run without a UI
 ENV DISPLAY :99

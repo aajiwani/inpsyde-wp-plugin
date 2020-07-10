@@ -10,3 +10,4 @@ wordpress-docker/data
 wordpress-docker/plugins
 wordpress-docker/wordpress
 wordpress-docker/node_modules
+wordpress-docker/cypress/videos

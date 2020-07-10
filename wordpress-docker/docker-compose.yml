@@ -4,13 +4,12 @@ version: '3.3'
 services:
     wp_install:
         container_name: 'local-wp-install'
+        entrypoint: /bin/bash -c "/bin/bash -c \"$${@}\""
         depends_on: 
             - wordpress
             - db
         build: 
             context: ./
-            args:
-                WORDPRESS_HOST: 'wordpress'
         command: sh -c "/wait && . /app/run-env-setup.sh && tail -f /dev/null"
         environment: 
             WORDPRESS_HOST: 'wordpress:80'
@@ -29,7 +28,7 @@ services:
         tty: true
         volumes:
             - .:/app
-            - node_modules:/app/node_modules
+            - /app/node_modules
     db:
         container_name: 'local-wordpress-db'
         image: 'mysql:5.7'
