@@ -23,8 +23,8 @@ WORKDIR /app
 RUN npm i puppeteer cheerio mysql
 
 # Finally copy the build application
-COPY ./wordpress_install.js /app
-COPY ./modify_wordpress_install.js /app
+COPY ./helper /app
+# COPY ./helper/modify_wordpress_install.js /app
 
 COPY ./run-env-setup.sh /app
 

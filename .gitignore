@@ -6,8 +6,8 @@ composer.phar
 # composer.lock
 
 # Ignores the local installation for wordpress
-wordpress-docker/data
-wordpress-docker/plugins
-wordpress-docker/wordpress
-wordpress-docker/node_modules
-wordpress-docker/cypress/videos
+data
+plugins
+wordpress
+node_modules
+cypress/videos
